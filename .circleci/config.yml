@@ -1,0 +1,35 @@
+version: 2
+notify:
+  webhooks:
+    # A list of hashes representing hooks. Only the url field is supported.
+    - url: https://google.co.in
+jobs:
+  build:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/php7.3
+    steps:
+      - checkout
+      - run:
+          name: Install System Dependencies
+          command: |
+            sudo apt-get update && sudo apt-get -f install && sudo apt-get install wget && sudo apt-get install -y libpng-dev && sudo apt-get install -y libpq-dev
+      - run: 
+          name: Install mbstring & PDO extension
+          command: |
+            sudo docker-php-ext-install gd exif pdo pdo_pgsql pgsql
+      - run: 
+          name: Install Composer
+          command: |
+            sudo composer self-update
+            composer install --prefer-source --no-interaction --dev
+      - run:
+         name: Unit Tests
+         command: |
+           ./vendor/phpunit/phpunit/phpunit
+
+workflows:
+  version: 2
+  validate-and-deploy:
+    jobs:
+      - build
