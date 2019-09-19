@@ -7,7 +7,7 @@ jobs:
   build:
     working_directory: ~/heroku-laravel6-circleci
     docker:
-      - image: svikramjeet/php7.3:1.0
+      - image: svikramjeet/php7.3
     steps:
       - checkout
       - run: 
