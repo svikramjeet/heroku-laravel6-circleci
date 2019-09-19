@@ -10,7 +10,6 @@ jobs:
       - image: svikramjeet/php7.3
     steps:
       - checkout
-      - run: 
       - restore_cache:
           keys:
             - composer-v1-{{ checksum "composer.lock" }}
