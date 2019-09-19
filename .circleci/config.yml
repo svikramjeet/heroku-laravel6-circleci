@@ -13,7 +13,7 @@ jobs:
       - run: 
           name: Install Composer
           command: |
-            sudo composer self-update
+            composer self-update
             composer install --prefer-source --no-interaction --dev
       - run:
          name: Unit Tests
