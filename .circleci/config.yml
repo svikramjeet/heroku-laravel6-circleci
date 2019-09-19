@@ -5,7 +5,7 @@ notify:
     - url: https://google.co.in
 jobs:
   build:
-    working_directory: ~/repo
+    working_directory: ~/heroku-laravel6-circleci
     docker:
       - image: svikramjeet/php7.3:1.0
     steps:
