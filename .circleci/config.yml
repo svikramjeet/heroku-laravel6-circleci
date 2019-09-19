@@ -10,6 +10,9 @@ jobs:
       - image: svikramjeet/php7.3
     steps:
       - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true # DLC will explicitly cache layers here and try to avoid rebuilding.
+      - run: docker build .
       - restore_cache:
           keys:
             - composer-v1-{{ checksum "composer.lock" }}
