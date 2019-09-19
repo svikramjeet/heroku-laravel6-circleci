@@ -11,10 +11,17 @@ jobs:
     steps:
       - checkout
       - run: 
-          name: Install Composer
-          command: |
-            composer self-update
-            composer install --prefer-source --no-interaction --dev
+      - restore_cache:
+          keys:
+            - composer-v1-{{ checksum "composer.lock" }}
+            - composer-v1-
+      - run:
+          name: Composer Install
+          command: composer install -n --prefer-dist
+      - save_cache:
+          key: composer-v1-{{ checksum "composer.lock" }}
+          paths:
+            - vendor
       - run:
          name: Unit Tests
          command: |
