@@ -7,7 +7,7 @@ jobs:
   build:
     working_directory: ~/repo
     docker:
-      - image: circleci/php7.3
+      - image: svikramjeet/php7.3
     steps:
       - checkout
       - run:
