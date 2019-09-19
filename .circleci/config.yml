@@ -10,14 +10,6 @@ jobs:
       - image: svikramjeet/php7.3:1.0
     steps:
       - checkout
-      - run:
-          name: Install System Dependencies
-          command: |
-            sudo apt-get update && sudo apt-get -f install && sudo apt-get install wget && sudo apt-get install -y libpng-dev && sudo apt-get install -y libpq-dev
-      - run: 
-          name: Install mbstring & PDO extension
-          command: |
-            sudo docker-php-ext-install gd exif pdo pdo_pgsql pgsql
       - run: 
           name: Install Composer
           command: |
