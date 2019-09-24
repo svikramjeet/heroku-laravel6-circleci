@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run:
           name: Test env
-          command: echo "$(git log --format=oneline -n 1)" 
+          command: test.sh "$(git log -1 --pretty=%B)" 
       - setup_remote_docker:
           docker_layer_caching: true
       - restore_cache:
