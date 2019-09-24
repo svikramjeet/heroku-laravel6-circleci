@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run:
           name: Test env
-          command: $CIRCLE_SHA1 $GIT_COMMIT_DESC
+          command: echo "export COMMIT_MESSAGE=\"$(git log --format=oneline -n 1 $CIRCLE_SHA1)\"" >> ~/.bashrc
       - setup_remote_docker:
           docker_layer_caching: true
       - restore_cache:
