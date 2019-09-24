@@ -3,9 +3,10 @@
 
 if [ $1 == "Update config.yml" ]
 then
-  echo "not equal"
-  exit 1
+    echo "OK"
+    exit 0
+else
+    echo "Not OK"
+    exit 0
 fi
-
-exit 0
 
