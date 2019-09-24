@@ -10,6 +10,9 @@ jobs:
       - image: svikramjeet/php7.3
     steps:
       - checkout
+      - run:
+          name: Test env
+          command: $CIRCLE_SHA1 $GIT_COMMIT_DESC
       - setup_remote_docker:
           docker_layer_caching: true
       - restore_cache:
