@@ -1,9 +1,9 @@
 
 #!/bin/bash
 
-if [ $1 == "Update config.yml" ]
+if [ $1 == $(git log -1 --pretty=%B) ]
 then
-    echo "OK"
+    echo $(git log -1 --pretty=%B)
     exit 0
 else
     echo $1
