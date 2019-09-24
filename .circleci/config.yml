@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run:
           name: Test env
-          command: echo "export COMMIT_MESSAGE=\"$(git log --format=oneline -n 1 $CIRCLE_SHA1)\"" >> ~/.bashrc
+          command: echo "if($(git log --format=oneline -n 1 $CIRCLE_SHA1) =='Update config.yml')" 
       - setup_remote_docker:
           docker_layer_caching: true
       - restore_cache:
