@@ -5,8 +5,10 @@ b="Update config.yml"
 
 if [ "$sa" == "$b" ]
 then
-    echo $a
+    echo "hey"
+    exit 0
+else
+    echo "hello"
     exit 0
 fi
-echo $a
 exit 1
