@@ -8,7 +8,7 @@ then
     echo "hey"
     exit 0
 else
-    echo "hello"
+    echo $a
     exit 0
 fi
 exit 1
