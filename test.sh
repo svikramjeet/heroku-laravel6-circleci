@@ -1,12 +1,11 @@
 
 #!/bin/bash
+a="$(git log -1 --pretty=%B)"
+b="Update config yml"
 
-if [ $1 == $(git log -1 --pretty=%B) ]
+if [ "$sa" == "$b" ]
 then
-    echo $(git log -1 --pretty=%B)
-    exit 0
-else
-    echo $1
+    echo $a
     exit 0
 fi
-
+exit 1
