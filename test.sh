@@ -6,7 +6,7 @@ then
     echo "OK"
     exit 0
 else
-    echo "Not OK"
+    echo $1
     exit 0
 fi
 
