@@ -1,14 +1,9 @@
 
 #!/bin/bash
 
-a='Update config.yml'
-b="$1"
-
-echo
-
-if [ "$a" -ne "$b" ]
+if [ $1 == "Update config.yml" ]
 then
-  echo "$a is not equal to $b"
+  echo "not equal"
   exit 1
 fi
 
