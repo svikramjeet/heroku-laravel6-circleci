@@ -1,7 +1,7 @@
 
 #!/bin/bash
 a="$(git log -1 --pretty=%B)"
-b="Update config.yml"
+b=${COMMIT}
 
 if [ "$a" == "$b" ]
 then
