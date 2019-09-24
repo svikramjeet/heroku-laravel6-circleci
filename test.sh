@@ -3,7 +3,7 @@
 a="$(git log -1 --pretty=%B)"
 b=${COMMIT}
 
-if [ "$a" == "$b" ]
+if [[ $string == *$b* ]];
 then
     exit 0
 fi
