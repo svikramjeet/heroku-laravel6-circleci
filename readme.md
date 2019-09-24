@@ -7,5 +7,5 @@
 
 ## About this repo
 
-This repository used CircleCI as continous integration adn heploy laravel6 application on heroku.
+This repository used CircleCI as continous integration adn heploy laravel6 application on heroku
 
