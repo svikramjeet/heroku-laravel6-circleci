@@ -1,11 +1,12 @@
 
 #!/bin/bash
-a="$(git log -1 --pretty=%B)"
-b=${COMMIT}
 
-if [[ $a == *$b* ]];
+a='My string is here';
+b='hey'
+
+if echo "$a" | egrep -iq "My string" ;
 then
-    exit 0
+    echo $a
+else
+    echo $b
 fi
-
-exit 1
